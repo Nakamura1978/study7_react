@@ -1,25 +1,25 @@
 import Image from 'next/image'
-import styles from '@/styles/Home.module.css'
+import classes from './Main.module.css'
 import  {Links } from '../conponents/Links'
 import  { Headline }  from '../conponents/Headline'
 
 export function Main() {
   return (
-    <main className={styles.main}>
+    <main className={classes.main}>
         <Headline page="index">
-          <code className={styles.code}>pages/index.js</code>
+          <code className={classes.code}>pages/index.js</code>
         </Headline>
 
-        <div className={styles.center}>
+        <div className={classes.center}>
           <Image
-            className={styles.logo}
+            className={classes.logo}
             src="/next.svg"
             alt="Next.js Logo"
             width={180}
             height={37}
             priority
           />
-          <div className={styles.thirteen}>
+          <div className={classes.thirteen}>
             <Image
               src="/thirteen.svg"
               alt="13"
