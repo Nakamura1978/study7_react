@@ -3,11 +3,11 @@ import classes from './Main.module.css'
 import  {Links } from '../conponents/Links'
 import  { Headline }  from '../conponents/Headline'
 
-export function Main() {
+export function Main(props) {
   return (
     <main className={classes.main}>
-        <Headline page="index">
-          <code className={classes.code}>pages/index.js</code>
+        <Headline page={props.page}>
+          <code className={classes.code}>pages/{props.page}.js</code>
         </Headline>
 
         <div className={classes.center}>
