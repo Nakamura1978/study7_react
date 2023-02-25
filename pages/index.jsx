@@ -7,6 +7,7 @@ export default function Home() {
   const [count, setCount] = useState(0);
   const [text, setText] = useState("");
   const [isShow, setIsShow] = useState(true);
+  const [array, setArray] = useState([]);
 
   const handleClick = useCallback(() => {
     if(count < 10){
@@ -26,6 +27,16 @@ export default function Home() {
     setIsShow(prevIsShow => !prevIsShow);
   }, []);
 
+  const handleAdd = useCallback(() => {
+    setArray(prevArray => {
+      if(prevArray.some(item => item === text)){
+        alert("同じ文字があります。");
+        return prevArray;
+      }
+      return [...array, text];
+    })
+  }, [text]);
+
   useEffect(() => {
     document.body.style.backgroundColor = "liteblue";
     return () => {
@@ -43,6 +54,12 @@ export default function Home() {
       <button onClick={handleClick}>ボタン</button>
       <button onClick={handleDisplay}>{isShow? "表示" : "非表示"}</button>
       <input type="text" value={text} onChange={handleCheck} />
+      <button onClick={handleAdd}>追加</button>
+      <ul>
+        {array.map(item => {
+          return (<li key={item}>{item}</li>);
+        })}
+      </ul>
       <Main page="index" />
     </>
   )
