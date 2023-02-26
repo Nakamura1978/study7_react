@@ -14,11 +14,11 @@ export const useInputArray = () => {
   
     const handleAdd = useCallback(() => {
       setArray(prevArray => {
-        if(prevArray.some(item => item === text)){
+        if(prevArray.includes(text)){
           alert("同じ文字があります。");
           return prevArray;
         }
-        return [...array, text];
+        return [...prevArray, text];
       })
     }, [text]);
   

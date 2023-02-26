@@ -2,9 +2,7 @@ import { Header } from 'src/conponents/Header'
 import Head from 'next/head'
 import { Main } from 'src/conponents/Main'
 
-export default function Home(props) {
-  const {count, isShow, handleClick, handleDisplay, text, array, handleCheck, handleAdd} = props;
-
+const Home = props => {
   return (
     <>
       <Head>
@@ -12,14 +10,14 @@ export default function Home(props) {
       </Head>
       <Header />
       
-      {isShow? <h1>{count}</h1> : null}
-      <button onClick={handleClick}>ボタン</button>
-      <button onClick={handleDisplay}>{isShow? "表示" : "非表示"}</button>
+      {props.isShow? <h1>{props.count}</h1> : null}
+      <button onClick={props.handleClick}>ボタン</button>
+      <button onClick={props.handleDisplay}>{props.isShow? "表示" : "非表示"}</button>
       
-      <input type="text" value={text} onChange={handleCheck} />
-      <button onClick={handleAdd}>追加</button>
+      <input type="text" value={props.text} onChange={props.handleCheck} />
+      <button onClick={props.handleAdd}>追加</button>
       <ul>
-        {array.map(item => {
+        {props.array.map(item => {
           return (<li key={item}>{item}</li>);
         })}
       </ul>
@@ -28,3 +26,5 @@ export default function Home(props) {
     </>
   )
 }
+
+export default Home;
