@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { Main } from 'src/conponents/Main'
 
 export default function About(props) {
-  const {count, isShow, handleClick, handleDisplay, text, array, handleCheck, handleAdd} = props;
+  const {doubleCount, isShow, handleClick, handleDisplay, text, array, handleCheck, handleAdd} = props;
   
   return (
     <>
@@ -11,7 +11,7 @@ export default function About(props) {
         <title>About Page</title>
       </Head>
       <Header />
-      {isShow? <h1>{count}</h1> : null}
+      {isShow? <h1>{doubleCount}</h1> : null}
       <button onClick={handleClick}>ボタン</button>
       <button onClick={handleDisplay}>{isShow? "表示" : "非表示"}</button>
       <input type="text" value={text} onChange={handleCheck} />
