@@ -1,15 +1,9 @@
 import { Header } from 'src/conponents/Header'
 import Head from 'next/head'
 import { Main } from 'src/conponents/Main'
-import { useCallback, useEffect, useState } from 'react';
-import { useCounter } from '@/src/hooks/useCounter';
-import { useInputArray } from '@/src/hooks/useInputArray';
-import { useBgLiteBlue } from '@/src/hooks/useBgLiteBlue';
 
-export default function About() {
-  const {count, isShow, handleClick, handleDisplay} = useCounter();
-  const {text, array, handleCheck, handleAdd} = useInputArray();  
-  useBgLiteBlue();
+export default function About(props) {
+  const {count, isShow, handleClick, handleDisplay, text, array, handleCheck, handleAdd} = props;
   
   return (
     <>

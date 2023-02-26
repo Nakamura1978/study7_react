@@ -1,15 +1,10 @@
 import { Header } from 'src/conponents/Header'
 import Head from 'next/head'
 import { Main } from 'src/conponents/Main'
-import { useCounter } from '@/src/hooks/useCounter';
-import { useInputArray } from '@/src/hooks/useInputArray';
-import { useBgLiteBlue } from '@/src/hooks/useBgLiteBlue';
 
-export default function Home() {
-  const {count, isShow, handleClick, handleDisplay} = useCounter();
-  const {text, array, handleCheck, handleAdd} = useInputArray();  
-  useBgLiteBlue();  
-  
+export default function Home(props) {
+  const {count, isShow, handleClick, handleDisplay, text, array, handleCheck, handleAdd} = props;
+
   return (
     <>
       <Head>
